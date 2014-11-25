@@ -1,3 +1,4 @@
+#include "stdlib.h"
 #include <List.h>
 
 struct Node {
@@ -67,4 +68,17 @@ void Insert(ElementType X, List L, Position P) {
   tmpCell->Element = X;
   tmpCell->next = P->next;
   P->next = tmpCell;
+}
+
+/* Correct DeleteList algorithm */
+void DeleteList(List L) {
+  Position P, tmp;
+
+  P = List->next;  //Header assumed
+  L->next = NULL;
+  while(P != NULL) {
+    tmp = P->next;
+    free(P);
+    P = tmp;
+  }
 }

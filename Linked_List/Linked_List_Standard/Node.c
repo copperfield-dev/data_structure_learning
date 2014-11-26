@@ -2,7 +2,7 @@
 #include <List.h>
 
 struct Node {
-  ElementType Element;
+  ElementType element;
   Position next;
 };
 
@@ -22,7 +22,7 @@ Position Find(ElementType X, List L) {
   Position P;
 
   P = L->Next;
-  while(P != NULL && P->Element != X)
+  while (P != NULL && P->element != X)
     P = P->next;
 
   return P;
@@ -49,7 +49,7 @@ Position FindPrevious(ElementType X, List L) {
   Position P;
 
   P = L;
-  while(P->next != NULL && P->next->Element != X)
+  while (P->next != NULL && P->next->element != X)
     P = P->next;
 
   return P;
@@ -65,7 +65,7 @@ void Insert(ElementType X, List L, Position P) {
   if (tmpCell == NULL)
     FatalError("Out of space!!!");
 
-  tmpCell->Element = X;
+  tmpCell->element = X;
   tmpCell->next = P->next;
   P->next = tmpCell;
 }
@@ -76,7 +76,7 @@ void DeleteList(List L) {
 
   P = List->next;  //Header assumed
   L->next = NULL;
-  while(P != NULL) {
+  while (P != NULL) {
     tmp = P->next;
     free(P);
     P = tmp;

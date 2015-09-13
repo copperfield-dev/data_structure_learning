@@ -1,4 +1,4 @@
-public class Quick {
+public class QuickSort {
     public static void sort(Comparable[] a) {
         sort(a, 0, a.length - 1);
     }

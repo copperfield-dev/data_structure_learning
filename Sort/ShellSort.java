@@ -1,4 +1,4 @@
-public class Shell {
+public class ShellSort {
     public static void sort(Comparable[] a) {
         int N = a.length;
         int h = 1;

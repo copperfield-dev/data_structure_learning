@@ -1,4 +1,4 @@
-public class Insertion {
+public class InsertionSort {
     public static void sort(Comparable[] a) {
         int N = a.length;
         for (int i = 1; i < N; i++) {
